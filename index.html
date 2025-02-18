@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="index.html">Garza Helados</a></div>
+            <ul class="links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <span>&#9776;</span>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </div>
+    </header>
+
+   <br><br> <h1 style="text-align: center;">Bienvenido a los helados mas ricos del mundo</h1><br><br><br>
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="img/Carrusel1.jpg">
+            </li>
+            <li>
+                <img src="img/Carrusel2.jpg">
+            </li>
+            <li>
+                <img src="img/Carrusel3.jpg">
+            </li>
+            <li>
+                <img src="img/Carrusel4.jpeg">
+            </li>
+        </ul>
+    </div>
+<br><br><br>
+
+<h1 style="text-align: center;">Contamos con los siguientes Paquetes</h1><br><br><br>
+
+<div class="wrapper">
+    <div class="table basic">
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">20</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">Tamaño chico</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Unicamente en vaso</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Unicamente se puede elegir un sabor</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Incluye 2 barritas de chocolate</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Comprar</button></div>
+    </div>
+    <div class="table premium">
+      <div class="ribbon"><span>Recomendado</span></div>
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">30</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">Tamaño mediano</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Puedes elegir entre vaso y cono</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">puedes combinar entre 2 sabores</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Incluye 3 barritas de chocolate</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Comprar</button></div>
+    </div>
+    <div class="table ultimate">
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">50</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">Tamaño grande</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Puedes elegir entre vaso y cono</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Puedes elegir desde 1 sabor hasta 3</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Incluye 4 barritas de chocolate</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Comprar</button></div>
+    </div>
+  </div>
+<br><br><br>
+  <script>
+        
+    const toggle_btn = document.querySelector('.toggle_btn');
+    const toggle_btn_icon = document.querySelector('.toggle_btn icon');
+    const dropdown_menu = document.querySelector('.dropdown_menu');
+
+    toggle_btn.onclick = function(){
+        dropdown_menu.classList.toggle('open')
+        const isOpen = dropdown_menu.classList.contains('open')
+
+        toggle_btn_icon.classList = isOpen 
+        ? 'fa-solid fa-xmark' 
+        : 'fa-solid fa-bars';
+    }
+</script>
+
+  <footer class="footer">
+    <ul class="social-icon">
+      <li class="icon-elem">
+        <a href="" class="icon">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+      </li>
+      <li class="icon-elem">
+        <a href="" class="icon">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </li>
+      <li class="icon-elem">
+        <a href="" class="icon">
+          <ion-icon name="mail-outline"></ion-icon>
+        </a>
+      </li>
+    </ul>
+    <ul class="menu">
+      <li class="menu-elem">
+        <a href="index.html" class="menu-icon"> Inicio </a>
+      </li>
+      <li class="menu-elem">
+        <a href="contacto.html" class="menu-icon"> Contacto </a>
+      </li>
+    </ul>
+  </nav>
+  <footer>
+    <p class="text">
+    <p class="text">2025 | Todos los derechos reservados</p>
+  </footer>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>
