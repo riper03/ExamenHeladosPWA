@@ -62,6 +62,13 @@ self.addEventListener('activate', (event) => {
             );
         })
     );
+
+    // Notificación cuando el Service Worker está activado
+    self.registration.showNotification("¡Estás listo para recibir notificaciones!", {
+        body: "¡Recibirás nuestras últimas actualizaciones aquí!",
+        icon: "img/icono1.png",
+        badge: "img/icono1.png",
+    });
 });
 
 // Fetch
@@ -81,13 +88,25 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-//push
+
+self.addEventListener('push', function(event) {
+    var options = {
+        body: event.data ? event.data.text() : '¡Tienes una nueva notificación!',
+        icon: 'img/icono1.png',
+        badge: 'img/icono1.png'
+    };
+
+    event.waitUntil(
+        self.registration.showNotification('¡Notificación Push!', options)
+    );
+});
+
 // Acción al hacer clic en una notificación
 self.addEventListener('notificationclick', function(event) {
     console.log('Notificación clickeada', event.notification);
     event.notification.close();
     event.waitUntil(
-        clients.openWindow('/index.html')
+        clients.openWindow('/index.html') // Cambia esta URL por la que desees abrir
     );
 });
 
@@ -112,4 +131,4 @@ self.addEventListener('notificationclick', function(event) {
     event.waitUntil(
         clients.openWindow('/index.html') // Cambia esta URL por la que desees abrir
     );
-}); 
+});
