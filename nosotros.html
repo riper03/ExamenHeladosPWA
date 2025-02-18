@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>nosotros</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
     <header>
         <div class="navbar">
@@ -18,6 +16,7 @@
                 <li><a href="ubicacion.html">Ubicación</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
+
             </ul>
             <div class="toggle_btn">
                 <span>&#9776;</span>
@@ -33,6 +32,47 @@
 
         </div>
     </header>
+<br><br>
+    <h1 style="text-align: center; border: 2px solid black; padding: 20px; background-color: #f0f0f0; border-radius: 10px; width: 80%; margin: 0 auto;">
+        Conoce mas acerca de nosotros</h1>
+      <br><br><br>
+
+      <div class="flip">
+        <div class="front" style="background-image: url(img/mision.png)">
+           <h1 class="text-shadow" style="text-align: center;">Mision</hi>
+        </div>
+        <div class="back">
+           <h2>Mision</h2>
+           <p>
+            Ofrecer helados artesanales de alta calidad, elaborados con ingredientes frescos, brindando una experiencia única y un servicio excepcional.           </p>
+        </div>
+    </div>
+    <div class="flip">
+        <div class="front" style="background-image: url(img/vision.jpg)">
+           <h1 class="text-shadow" style="text-align: center;">Vision</hi>
+        </div>
+        <div class="back">
+           <h2>Vision</h2>
+           <p>
+            Ser la heladería líder, innovando con nuevos sabores y destacando por nuestra calidad y satisfacción del cliente.           </p>
+        </div>
+    </div>
+    <div class="flip">
+        <div class="front" style="background-image: url(img/objetivos.jpg)">
+           <h1 class="text-shadow"style="text-align: center;">Objetivos</hi>
+        </div>
+        <div class="back">
+           <h2>Objetivos</h2>
+           <p>
+            Mantener la calidad en todos nuestros productos. <br>
+            Innovar con nuevos sabores. <br>
+            Ofrecer un excelente servicio al cliente. <br>
+          </p>
+        </div>
+    </div>
+    
+    <br><br><br><br>
+
     <script>
         
         const toggle_btn = document.querySelector('.toggle_btn');
@@ -47,64 +87,6 @@
             ? 'fa-solid fa-xmark' 
             : 'fa-solid fa-bars';
         }
-        </script>
-
-    <br><br>
-    <h1 style="text-align: center; border: 2px solid black; padding: 20px; background-color: #f0f0f0; border-radius: 10px; width: 80%; margin: 0 auto;">
-  Los productos que les podemos ofrecer son los siguientes</h1>
-<br><br>
-    <div class="flip">
-        <div class="front" style="background-image: url(img/HeladosSabores.jpg)">
-           <h1 class="text-shadow" style="text-align: center;">Helados</hi>
-        </div>
-        <div class="back">
-           <h2>Tenemos</h2>
-           <p>Café,
-            Galleta,
-            Vainilla C/Chocolate,
-            Cheesecake,
-            Cajeta,
-            Mamey,
-            Vainilla C/Uva,
-            Pingüino,
-            Cajeta C/Nuez</p>
-        </div>
-    </div>
-    <div class="flip">
-        <div class="front" style="background-image: url(img/PaletasHielo.jpg)">
-           <h1 class="text-shadow" style="text-align: center;">Paletas de Hielo</hi>
-        </div>
-        <div class="back">
-           <h2>Tenemos</h2>
-           <p>Arroz C/Leche,
-            Nuez,
-            Café,
-            Nuez C/Fresa,
-            Café/Vainilla,
-            Pasitas,
-            Cajeta,
-            Pistache,
-            Capuchino</p>
-        </div>
-    </div>
-    <div class="flip">
-        <div class="front" style="background-image: url(img/CubetasHelados.jpeg)">
-           <h1 class="text-shadow"style="text-align: center;">Cubetas de Helado</hi>
-        </div>
-        <div class="back">
-           <h2>Contamos con</h2>
-           <p>Capuccino,
-            Chocolate,
-            Vainilla,
-            Fresa,
-            Napolitano.</p>
-        </div>
-    </div>
-    
-    <br>
-    <br><br><br>
-    
-
     </script>
     
       <footer class="footer">
@@ -130,10 +112,11 @@
             <a href="index.html" class="menu-icon"> Inicio </a>
           </li>
           <li class="menu-elem">
-            <a href="contacto.html" class="menu-icon"> Contacto </a>
+            <a href="Contacto.html" class="menu-icon"> Contacto </a>
           </li>
         </ul>
       </nav>
+      
       <footer>
         <p class="text">
         <p class="text">2025 | Todos los derechos reservados</p>
@@ -146,6 +129,5 @@
         nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
       ></script>
-    
 </body>
 </html>
