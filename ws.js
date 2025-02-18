@@ -64,7 +64,7 @@ self.addEventListener('activate', (event) => {
     );
 
     // Notificación cuando el Service Worker está activado
-    self.registration.showNotification("¡Estás listo para recibir notificaciones!", {
+    self.registration.showNotification("¡Estás listo para estar al tanto con nuestras actualizaciones!", {
         body: "¡Recibirás nuestras últimas actualizaciones aquí!",
         icon: "img/icono1.png",
         badge: "img/icono1.png",
