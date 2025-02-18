@@ -81,14 +81,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
             .then((response) => {
-                // Devuelve el recurso desde el caché si está disponible
-                if (response) {
-                    return response;
-                }
-                // Si no está en caché, realiza una solicitud de red
-                return fetch(event.request);
-            })
-            .catch((error) => console.error('Error en la solicitud fetch', error))
+               return response || fetch(event.request);
+            }).catch(() => caches.match('/offline.html'))
     );
 });
 
