@@ -161,6 +161,66 @@
     }
 </script>
 
+    <!-- Botón para suscribirse a las notificaciones -->
+    <button id="subscribeButton" style="display: block; margin: 0 auto; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Suscribirse a Notificaciones Push</button>
+
+    <script>
+        // Solicitar permiso para notificaciones push
+        if ('Notification' in window && 'serviceWorker' in navigator) {
+            document.getElementById('subscribeButton').addEventListener('click', function() {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        console.log('Permiso concedido para mostrar notificaciones');
+                        subscribeUserToPush(); // Suscribir al usuario
+                    } else {
+                        console.log('Permiso denegado para mostrar notificaciones');
+                    }
+                });
+            });
+
+            // Registra el Service Worker
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                console.log('Service Worker registrado con éxito', registration);
+            }).catch(function(error) {
+                console.log('Error al registrar el Service Worker:', error);
+            });
+
+            // Suscribir al usuario a las notificaciones push
+            function subscribeUserToPush() {
+                navigator.serviceWorker.ready.then(function(registration) {
+                    const vapidPublicKey = '<TU_CLAVE_PUBLICA_VAPID>'; // Reemplaza con tu clave pública VAPID
+                    const applicationServerKey = urlB64ToUint8Array(vapidPublicKey);
+
+                    registration.pushManager.subscribe({
+                        userVisibleOnly: true,
+                        applicationServerKey: applicationServerKey
+                    }).then(function(subscription) {
+                        console.log('Usuario suscrito a notificaciones push', subscription);
+                        // Aquí puedes enviar la suscripción al servidor si es necesario
+                    }).catch(function(error) {
+                        console.error('Error al suscribir al usuario', error);
+                    });
+                });
+            }
+
+            function urlB64ToUint8Array(base64String) {
+                const padding = '='.repeat((4 - base64String.length % 4) % 4);
+                const base64 = (base64String + padding)
+                    .replace(/\-/g, '+')
+                    .replace(/_/g, '/');
+                const rawData = window.atob(base64);
+                const outputArray = new Uint8Array(rawData.length);
+
+                for (let i = 0; i < rawData.length; ++i) {
+                    outputArray[i] = rawData.charCodeAt(i);
+                }
+                return outputArray;
+            }
+        } else {
+            console.log('El navegador no soporta notificaciones push o Service Workers');
+        }
+    </script>
+    
   <footer class="footer">
     <ul class="social-icon">
       <li class="icon-elem">
@@ -201,5 +261,7 @@
     src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
   ></script>
   <script src="app.js"></script>
+
+
 </body>
 </html>
