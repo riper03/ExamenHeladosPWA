@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicacion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="index.html">Garza Helados</a></div>
+            <ul class="links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <span>&#9776;</span>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </div>
+    </header>
+    <br><br>
+      <h1 style="text-align: center;">Lugares en los que nos pueden encontrar</h1>
+      <br><br>
+          <div class="flip">
+              <div class="front" style="background-image: url(img/TizayucaMapa.png)">
+                 <h1 class="text-shadow" style="text-align: center;">Tizayuca</hi>
+              </div>
+              <div class="back">
+                 <h2>Tenemos</h2>
+                 <p>Actualmente en tizayuca contamoscon dos accesorios en las cuales nos pueden encontrar</p>
+              </div>
+          </div>
+          <div class="flip">
+              <div class="front" style="background-image: url(img/VillasTezontepecMapa.png)">
+                 <h1 class="text-shadow" style="text-align: center;">Villas de tezontepec</hi>
+              </div>
+              <div class="back">
+                 <h2>Tenemos</h2>
+                 <p>En villas de tezontepecapenas tenemos una sucursaly en un futuro buscamos expandirnos</p>
+              </div>
+          </div>
+          <div class="flip">
+            <div class="front" style="background-image: url(img/EdoMexMapa.jpeg)">
+               <h1 class="text-shadow" style="text-align: center;">Estado de Mexico</hi>
+            </div>
+            <div class="back">
+               <h2>Tenemos</h2>
+               <p>En el Estado de México contamos con alrededorde 3 sucursalesen las cuales nos pueden encontrar</p>
+            </div>
+        </div>
+        <div class="flip">
+            <div class="front" style="background-image: url(img/Huasca.jpg)">
+               <h1 class="text-shadow" style="text-align: center;">Huasca de Ocampo</hi>
+            </div>
+            <div class="back">
+               <h2>Tenemos</h2>
+               <p>en Huasca de campo Tendremos la inauguración de nuestra primer sucursal</p>
+            </div>
+        </div>
+        <div class="flip">
+            <div class="front" style="background-image: url(img/PachucaMapa.png)">
+               <h1 class="text-shadow" style="text-align: center;">Pachuca</hi>
+            </div>
+            <div class="back">
+               <h2>Tenemos</h2>
+               <p>contamos con dos sucursales en Pachuca</p>
+            </div>
+        </div>
+        <div class="flip">
+            <div class="front" style="background-image: url(img/PachucaMapa.png)">
+               <h1 class="text-shadow" style="text-align: center;">Temascalapa</hi>
+            </div>
+            <div class="back">
+               <h2>Tenemos</h2>
+               <p>Gente moscalapa apenas vamos a abrir nuestro primer sucursal entonces lo esperamos ahí</p>
+            </div>
+        </div>
+
+    <script>
+        
+        const toggle_btn = document.querySelector('.toggle_btn');
+        const toggle_btn_icon = document.querySelector('.toggle_btn icon');
+        const dropdown_menu = document.querySelector('.dropdown_menu');
+    
+        toggle_btn.onclick = function(){
+            dropdown_menu.classList.toggle('open')
+            const isOpen = dropdown_menu.classList.contains('open')
+    
+            toggle_btn_icon.classList = isOpen 
+            ? 'fa-solid fa-xmark' 
+            : 'fa-solid fa-bars';
+        }
+    </script>
+    
+      <footer class="footer">
+        <ul class="social-icon">
+          <li class="icon-elem">
+            <a href="" class="icon">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </li>
+          <li class="icon-elem">
+            <a href="" class="icon">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li class="icon-elem">
+            <a href="" class="icon">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <li class="menu-elem">
+            <a href="index.html" class="menu-icon"> Inicio </a>
+          </li>
+          <li class="menu-elem">
+            <a href="Contacto.html" class="menu-icon"> Contacto </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <footer>
+        <p class="text">
+        <p class="text">2025 | Todos los derechos reservados</p>
+      </footer>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></script>
+</body>
+</html>
