@@ -1,4 +1,4 @@
-var CACHE_NAME = 'v2Helados';
+var CACHE_NAME = 'v3Helados';
 var cacheFiles = [
     './',
     './index.html',
@@ -53,7 +53,7 @@ self.addEventListener('install', function(e) {
 
 // Activación del Service Worker
 self.addEventListener('activate', (event) => {
-    const cacheWhitelist = ['v2Helados'];
+    const cacheWhitelist = ['v3Helados'];
     console.log('Service Worker: Activado');
     event.waitUntil(
         caches.keys().then((cacheNames) => {
