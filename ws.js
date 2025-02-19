@@ -8,6 +8,8 @@ var cacheFiles = [
     './productos.html',
     './ubicacion.html',
     './nosotros.html',
+    './app.js',
+    './ws.js',
     './img/Carrusel1.jpg',
     './img/Carrusel2.jpg',
     './img/Carrusel3.jpg',
