@@ -78,41 +78,39 @@ self.addEventListener('activate', (event) => {
 });
 
 //fetch
-self.addEventListener('fetch', (event) => {
-    console.log('Service Worker: Fetch solicitado para', event.request.url);
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                if (response) {
+self.addEventListener('fetch', function(e) {
+    console.log('Service Worker: Fetching', e.request.url);
+    
+    e.respondWith(
+        caches.match(e.request).then(function(response) {
+            if(response) {
+                console.log('Cache encontrada', e.request.url);
+                return response;
+            }
+            var requestClone = e.request.clone();
+            fetch(requestClone).then(function(response) {
+                if(!response){
+                    console.log('No se encontro respuesta');
                     return response;
                 }
-                return fetch(event.request);
+                var responseClone = response.clone();
+                
+                caches.open(CACHE_NAME).then(function(cache) {
+                    cache.put(e.request, responseClone);
+                    return response;
+                });
             })
-            .catch((error) => console.error('Error en la solicitud fetch', error))
-    );
-});
-
-
-// Evento push para recibir notificaciones
-self.addEventListener('push', function(event) {
-    console.log('Push recibido', event);
-
-    var options = {
-        body: event.data ? event.data.text() : '¡Tienes una nueva notificación!',
-        icon: 'img/icono1.png',
-        badge: 'img/icono1.png'
-    };
-
-    event.waitUntil(
-        self.registration.showNotification('¡Notificación Push!', options)
-    );
-});
-
+            .catch(function(err){
+                console.log('Error al hacer fetch', err);
+            })
+        })
+    )
+})
 // Acción al hacer clic en una notificación
 self.addEventListener('notificationclick', function(event) {
     console.log('Notificación clickeada', event.notification);
     event.notification.close();
     event.waitUntil(
-        clients.openWindow('/index.html') // Cambia esta URL por la que desees abrir
+        clients.openWindow('/index.html') 
     );
 });

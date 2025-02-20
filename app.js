@@ -1,5 +1,3 @@
-
-
     // Solicitar permiso de notificación al cargar la página
 if ('Notification' in window && 'serviceWorker' in navigator) {
     Notification.requestPermission().then(function(permission) {
